@@ -4,3 +4,5 @@ matplotlib
 notebook
 pylatexenc
 missingno
+nepali_stemmer
+importlib_resources
