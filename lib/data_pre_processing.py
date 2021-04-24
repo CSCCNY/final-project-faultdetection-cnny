@@ -20,16 +20,14 @@ def load_data(dataset_str, path_to_data="data"):
     names = ["x", "y", "tx", "ty", "allx", "ally", "graph"]
     objects = []
     for i in range(len(names)):
-        with open(f"{path_to_data}/{dataset_str}.{names[i]}", "rb") as f:
+        with open(f"{path_to_data}/ind.{dataset_str}.{names[i]}", "rb") as f:
             if sys.version_info > (3, 0):
                 objects.append(pkl.load(f, encoding="latin1"))
             else:
                 objects.append(pkl.load(f))
 
     x, y, tx, ty, allx, ally, graph = tuple(objects)
-    test_idx_reorder = parse_index_file(
-        "{}/{}.test.index".format(path_to_data, dataset_str)
-    )
+    test_idx_reorder = parse_index_file(f"{path_to_data}/ind.{dataset_str}.test.index")
 
     test_idx_range = np.sort(test_idx_reorder)
 
