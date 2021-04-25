@@ -18,11 +18,11 @@ def saveResultToFile(
     graph = {}
     circuit_hash = circuitDescription[2]
     for k, v in circuit_hash.items():
-        graph[k] = graph.get(k, set())
-        graph[k].update(v["outputs"])
+        # graph[k] = graph.get(k, set())
+        # graph[k].update(v["outputs"])
         for input_node in v["inputs"]:
             graph[input_node] = graph.get(input_node, set())
-            graph[input_node].add(k)
+            graph[input_node].update(v["outputs"])
     pickle.dump(graph, open(graph_file, "wb"))
 
     graph_nodes = nx.from_dict_of_lists(graph).nodes
@@ -42,5 +42,6 @@ def saveResultToFile(
             Y.append("ho")
         else:
             Y.append("eo")
+
     pickle.dump(X, open(x, "wb"))
     pickle.dump(Y, open(y, "wb"))
