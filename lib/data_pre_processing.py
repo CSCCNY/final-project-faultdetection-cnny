@@ -15,37 +15,27 @@ def parse_index_file(filename):
     return index
 
 
-def load_data(dataset_str, path_to_data="data"):
+def load_data(circuit_name, path_to_data="data"):
     """Load data."""
-    names = ["x", "y", "tx", "ty", "allx", "ally", "graph"]
+    names = ["x", "y", "graph"]
     objects = []
     for i in range(len(names)):
-        with open(f"{path_to_data}/ind.{dataset_str}.{names[i]}", "rb") as f:
+        with open(f"{path_to_data}/{circuit_name}.{names[i]}", "rb") as f:
             if sys.version_info > (3, 0):
                 objects.append(pkl.load(f, encoding="latin1"))
             else:
                 objects.append(pkl.load(f))
 
-    x, y, tx, ty, allx, ally, graph = tuple(objects)
-    test_idx_reorder = parse_index_file(f"{path_to_data}/ind.{dataset_str}.test.index")
+    x, y, graph = tuple(objects)
 
-    test_idx_range = np.sort(test_idx_reorder)
-
-    features = sp.vstack((allx, tx)).tolil()
-    features[test_idx_reorder, :] = features[test_idx_range, :]
+    features = sp.csr_matrix(x)
     adj = nx.adjacency_matrix(nx.from_dict_of_lists(graph))
 
-    labels = np.vstack((ally, ty))
-    labels[test_idx_reorder, :] = labels[test_idx_range, :]
-
-    idx_test = test_idx_range.tolist()
-    idx_train = range(len(y))
-    idx_val = range(len(y), len(y) + 500)
+    labels = y
 
     print(adj.shape)
     print(features.shape)
-
-    return adj, features, labels, idx_train, idx_val, idx_test
+    return adj, features, labels
 
 
 def preprocess_features(features):
@@ -64,3 +54,6 @@ def load_path(path):
 
 def remove_path(path):
     sys.path.remove(path)
+
+
+# load_data("c6288", "output/")
