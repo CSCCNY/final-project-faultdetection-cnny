@@ -39,9 +39,9 @@ def saveResultToFile(
             X.append(node_elements)
 
         if k in hard_to_observe:
-            Y.append("ho")
+            Y.append(1)
         else:
-            Y.append("eo")
-
+            Y.append(0)
+    # pdb.set_trace()
     pickle.dump(X, open(x, "wb"))
     pickle.dump(Y, open(y, "wb"))

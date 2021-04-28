@@ -37,7 +37,8 @@ def calculateTestabilityMeasures(inputFileName, outputFileName):
         for l in level.keys():
             testability[l].update({"level": i})
 
-    tenPercentSize = round(len(testability) * 0.1, 0)
+    # tenPercentSize = round(len(testability) * 0.1, 0)
+    tenPercentSize = round(len(testability) * 1, 0)
     saveResultToFile(
         outputFileName,
         circuitDescription,
