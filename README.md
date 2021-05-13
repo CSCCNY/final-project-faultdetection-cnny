@@ -29,6 +29,6 @@ Note: The files must be in the format circuit.x, circuit.graph and circuit.y.
 For our experiment, we extracted the features 'logical level', 'controlability-0', 'controlability-1' and 'observality', graph dictionary and circuit labels which are 1(Hard to Observe) and 0(Easy to observe) for each circuit nodes. We dumped input, graph and output to circuit.x, circuit.graph and circuit.y pickle file which is used above for loading the dataset. All the circuits datasets that we generated is the the drive shared above inside output folder.
 
 ## GCN references:
-[1] [Kipf, Thomas N., and Max Welling. "Semi-supervised classification with graph convolutional networks." arXiv preprint arXiv:1609.02907 (2016).](https://arxiv.org/abs/1710.10370)
-[2][Du, Jian, et al. "Topology adaptive graph convolutional networks." arXiv preprint arXiv:1710.10370 (2017)](https://arxiv.org/abs/1710.10370)
-[3][Defferrard, Michaël, Xavier Bresson, and Pierre Vandergheynst. "Convolutional neural networks on graphs with fast localized spectral filtering." arXiv preprint arXiv:1606.09375 (2016).](https://arxiv.org/abs/1606.09375)
+- [1] [Kipf, Thomas N., and Max Welling. "Semi-supervised classification with graph convolutional networks." arXiv preprint arXiv:1609.02907 (2016).](https://arxiv.org/abs/1710.10370)
+- [2] [Du, Jian, et al. "Topology adaptive graph convolutional networks." arXiv preprint arXiv:1710.10370 (2017)](https://arxiv.org/abs/1710.10370)
+- [3] [Defferrard, Michaël, Xavier Bresson, and Pierre Vandergheynst. "Convolutional neural networks on graphs with fast localized spectral filtering." arXiv preprint arXiv:1606.09375 (2016).](https://arxiv.org/abs/1606.09375)
