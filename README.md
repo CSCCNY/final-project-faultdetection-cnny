@@ -6,7 +6,7 @@
 pip install -r requirements.txt
 ```
 
-#### Input 
+#### Input ####
 The graph inputs must be generated into three files with .x, .graph and .y as suffix to the filename for node features, circuit graph dictionary and output labels respectively.
 
 #### Load input
