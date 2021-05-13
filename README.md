@@ -32,3 +32,8 @@ For our experiment, we extracted the features 'logical level', 'controlability-0
 - [1] [Kipf, Thomas N., and Max Welling. "Semi-supervised classification with graph convolutional networks." arXiv preprint arXiv:1609.02907 (2016).](https://arxiv.org/abs/1710.10370)
 - [2] [Du, Jian, et al. "Topology adaptive graph convolutional networks." arXiv preprint arXiv:1710.10370 (2017)](https://arxiv.org/abs/1710.10370)
 - [3] [Defferrard, Michaël, Xavier Bresson, and Pierre Vandergheynst. "Convolutional neural networks on graphs with fast localized spectral filtering." arXiv preprint arXiv:1606.09375 (2016).](https://arxiv.org/abs/1606.09375)
+
+## Team Members
+- Vedika Saravanan
+- Nikita Acharya
+- Saurav Predhan
